@@ -12,7 +12,20 @@
   <!--<link rel="preload" as="image" href="assets/hero-poster.jpg" imagesrcset="assets/hero-poster.jpg"> -->
   <link rel="preload" as="video" href="assets/hero.mp4" type="video/mp4">
   <link rel="preload" href="assets/data/catalog.json" as="fetch" crossorigin="anonymous">
-  <link rel="preload" href="assets/data/accessories.json" as="fetch" crossorigin="anonymous">
+<link rel="preload" href="assets/data/accessories.json" as="fetch" crossorigin="anonymous">
+
+<script>
+  // Запускаем загрузку МГНОВЕННО и сохраняем промисы
+  console.time('early-catalog');
+  window.__catalogPromise = fetch('assets/data/catalog.json', {cache:'force-cache'})
+    .then(r => { if(!r.ok) throw r; return r.json(); })
+    .finally(()=>console.timeEnd('early-catalog'))
+    .catch(()=>null);
+
+  window.__accessoriesPromise = fetch('assets/data/accessories.json', {cache:'force-cache'})
+    .then(r => r.ok ? r.json() : null)
+    .catch(()=>null);
+</script>
 </head>
 <body>
   <body id="top">

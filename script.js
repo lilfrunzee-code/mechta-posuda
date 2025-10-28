@@ -209,21 +209,35 @@ function smoothScrollTo(el) {
 
 /* ==== ВЕРТИКАЛЬНЫЙ КАТАЛОГ С АНИМАЦИЯМИ ==== */
 let CATALOG_DATA = {};
+let ACCESSORIES_DATA = null;
 
-// 1. Загружаем JSON данных каталога
 async function loadCatalogData() {
+  console.time('catalog-used');
   try {
-    // FIX: отключаем кэш чтобы при локальном тесте/обновлениях данные не залипали
-    const res = await fetch('assets/data/catalog.json', { cache: 'no-store' });
-    if (!res.ok) throw new Error('Ошибка загрузки JSON: ' + res.status);
-    CATALOG_DATA = await res.json();
-  } catch (err) {
-    console.error('Не удалось загрузить каталог:', err);
-    // Не падаем — просто оставим пустой каталог
-    CATALOG_DATA = {};
+    if (window.__catalogPromise) {
+      const json = await window.__catalogPromise;
+      if (json) {
+        CATALOG_DATA = json;
+      } else {
+        const r = await fetch('assets/data/catalog.json', {cache:'force-cache'});
+        if (!r.ok) throw new Error('catalog.json ' + r.status);
+        CATALOG_DATA = await r.json();
+      }
+    } else {
+      const r = await fetch('assets/data/catalog.json', {cache:'force-cache'});
+      if (!r.ok) throw new Error('catalog.json ' + r.status);
+      CATALOG_DATA = await r.json();
+    }
+
+    try {
+      ACCESSORIES_DATA = window.__accessoriesPromise
+        ? await window.__accessoriesPromise
+        : (await fetch('assets/data/accessories.json', {cache:'force-cache'})).json();
+    } catch {}
+  } finally {
+    console.timeEnd('catalog-used');
   }
 }
-
 // 2. Инициализация каталога
 async function initCatalog() {
   await loadCatalogData();
