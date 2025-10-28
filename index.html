@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <!-- Added viewport-fit=cover to support safe-area insets on iPhone -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>МЕЧТА — посуда из литого алюминия</title>
+  <link rel="icon" href="assets/favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Прелоадим только то, что в LCP: hero-видео и его постер -->
+  <!--<link rel="preload" as="image" href="assets/hero-poster.jpg" imagesrcset="assets/hero-poster.jpg"> -->
+  <link rel="preload" as="video" href="assets/hero.mp4" type="video/mp4">
+</head>
+<body>
+  <body id="top">
+  <!-- ===== ГЛАВНАЯ ШАПКА (стекло + бургер) ===== -->
+  <header class="site-header" id="hero">
+    <div class="header-inner container">
+      <a class="brand" href="#top">
+        <img src="assets/logo-mechta-transparent.png" alt="МЕЧТА" loading="lazy" />
+        <!-- Added loading="lazy" for brand logo -->
+      </a>
+
+      <nav class="nav-desktop">
+        <a href="#about">О нас</a>
+        <a href="#colors">Продукция</a>
+        <a href="#market">Маркетплейсы</a>
+        <a href="#cta">Контакты</a>
+      </nav>
+
+      <button class="burger" aria-label="Открыть меню" aria-controls="mobileMenu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Мобильное стеклянное меню -->
+    <nav class="nav-mobile" id="mobileMenu" hidden>
+      <a href="#about" data-close>О нас</a>
+      <a href="#colors" data-close>Продукция</a>
+      <a href="#market" data-close>Маркетплейсы</a>
+      <a href="#cta" data-close>Контакты</a>
+      <a class="btn-phone" href="tel:+79933533767">+7 993 353-37-67</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO (видео + текст) ===== -->
+  <section class="hero" id="hero">
+    <video class="hero-video" autoplay muted playsinline loop preload="auto">
+      <!-- Если сделаешь webm — добавь сюда -->
+      <source src="assets/hero.mp4" type="video/mp4" />
+    </video>
+    <!-- FIX: changed preload to "auto" for hero video -->
+
+    <div class="hero-copy container reveal">
+      <h1>Посудa МЕЧТА —<br> С любовью к кухне и Вашему комфорту</h1>
+      <p>Литой алюминий с безопасным антипригарным покрытием на водной основе, без PFOA. Равномерный нагрев, прочные ручки, стеклянные крышки.</p>
+
+      <div class="hero-actions">
+              <!-- НОВАЯ КНОПКА: прозрачная с зелёной обводкой -->
+              <a id="btnMoreAbout"
+                class="btn btn--outline-green"
+                href="#about"
+                data-reveal="about">
+                Узнать больше о компании
+              </a>
+      </div>
+    </div>
+    <!-- ... внутри секции Hero (после текста и кнопок) ... -->
+<a href="#colors" class="scroll-down" aria-label="Прокрутить вниз к разделу Ассортимент">
+  <span class="scroll-down__icon">&#x2193;</span>
+</a>
+<!-- ... далее закрывающий тег </section> Hero ... -->
+</section>
+  <!-- ===== О КОМПАНИИ ===== -->
+  <section id="about" class="section about">
+    <div class="container about__wrap reveal">
+      <div class="about__text">
+        <h2 class="about__title">О компании</h2>
+        <p class="about__lead">
+          В 2013 году в пгт. Кукмор в республике Татарстан был начат выпуск посуды экстра-класса из литого алюминия
+          с антипригарным покрытием, которая была названа — «МЕЧТА». 
+          Мы — команда специалистов, которые любят свою
+          работу, именно поэтому посуда «Мечта» зарекомендовала себя как продукция высокого качества.
+          Мы производим посуду в соответствии с принципами качества и надёжности, принятыми во всём мире, используя только качественное
+          сырьё и материалы, соответствующие всем требованиям ГОСТа.
+          Антипригарные покрытия выполнены на водной основе и не содержат 
+          перфтороктановую кислоту (PFOA). 
+          Производство посуды включает весь цикл — от литья изделий до
+          упаковки готовой продукции…
+        </p>
+      </div>
+      <figure class="about__video">
+        <video class="about__video-media" autoplay muted loop playsinline preload="auto">
+          <source src="assets/videos/production.mp4" type="video/mp4" />
+        </video>
+      </figure>
+    </div>
+  </section>
+  <!-- FIX: added preload="auto" for "О компании" video -->
+
+  <!-- ===== ТЕХНОЛОГИЯ КАЧЕСТВА ===== -->
+  <section id="quality"class="section quality">
+    <div class="container quality">
+      <div class="quality_wrap">
+
+        <!-- Видео слева -->
+        <figure class="quality_video glass"><video class="quality_video-el" src="assets/videos/tehnology.mp4" playsinline muted autoplay loop preload="auto"></video>
+        </figure>
+        <!-- Текст справа -->
+        <div class="quality_text">
+          <h2 class="quality_title">Технология качества</h2>
+          <p class="quality_lead">
+            Каждое изделие «МЕЧТА» создаётся с особым вниманием к деталям и качеству. 
+            Основание наших сковород и кастрюль выполнено из литого алюминия, что обеспечивает 
+            равномерный прогрев и отсутствие деформаций даже при высоких температурах.
+          </p>
+          <p class="quality_lead">
+            Многослойное антипригарное покрытие наносится методом напыления в несколько этапов. 
+            Оно не содержит перфтороктановую кислоту (PFOA) и безопасно для здоровья. 
+            Именно поэтому посуду «МЕЧТА» можно использовать не только на всех типах плит, 
+            но и в духовке.
+          </p>
+          <p class="quality_lead">
+            Контроль качества проводится на каждом этапе производства: от отливки и обработки 
+            до тестирования антипригарного слоя и упаковки готовых изделий.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FIX: added preload="auto" for "Технология качества" video -->
+
+  <!-- (Removed an unneeded </section> tag that was here) -->
+  <!-- ===== ПРОДУКЦИЯ / ЦВЕТА КОЛЛЕКЦИИ ===== -->
+  <section id="colors" class="section">
+    <div class="container">
+      <h2>Цвета коллекции</h2>
+      <p class="lead">Выбирайте оттенок, который подходит вашей кухне</p>
+
+      <div class="cards">
+        <!-- Blue -->
+        <article class="card glass" data-tone="blue">
+          <span class="badge badge-animated-blue">НОВИНКА</span>
+          <div class="color-sample" style="background-image:url('assets/textures/blue.jpg')"></div>
+          <h3>Blue</h3>
+          <p>Глубокий синий — акцент в современном интерьере.</p>
+        </article>
+
+        <article class="card glass" data-tone="violet">
+          <span class="badge badge-animated-violet">НОВИНКА</span>
+          <div class="color-sample" style="background-image:url('assets/textures/violet.jpg')"></div>
+          <h3>Violet</h3>
+          <p>Благородный фиолетовый с мягким сатиновым отливом.</p>
+        </article>
+
+        <article class="card glass" data-tone="mokko">
+          <span class="badge badge-animated-mokko">ОБНОВЛЁННЫЙ ДИЗАЙН</span>
+          <div class="color-sample" style="background-image:url('assets/textures/mokko.jpg')"></div>
+          <h3>Mokko</h3>
+          <p>Тёплый кофейный тон для уютной кухни.</p>
+        </article>
+
+        <article class="card glass" data-tone="star">
+          <span class="badge badge-animated-granite">ХИТ ПРОДАЖ</span>
+          <div class="color-sample" style="background-image:url('assets/textures/granit-star.jpg')"></div>
+          <h3>Гранит Star</h3>
+          <p>Практичный «каменный» оттенок — стильно и надёжно.</p>
+        </article>
+
+        <article class="card glass" data-tone="black">
+          <div class="color-sample" style="background-image:url('assets/textures/granit-black.jpg')"></div>
+          <h3>Гранит Black</h3>
+          <p>Чёрный гранит (строгий, современный, универсальный).</p>
+        </article>
+
+        <article class="card glass" data-tone="brown">
+          <div class="color-sample" style="background-image:url('assets/textures/granit-brown.jpg')"></div>
+          <h3>Гранит Brown</h3>
+          <p>Кофейный гранит (тёплый, уютный оттенок с намёком на кофе).</p>
+        </article>
+
+        <article class="card glass" data-tone="granite">
+          <div class="color-sample" style="background-image:url('assets/textures/granit.jpg')"></div>
+          <h3>Гранит</h3>
+          <p>Классический гранит (нейтральный каменный тон, подходит под всё).</p>
+        </article>
+
+        <article class="card glass" data-tone="grey">
+          <span class="badge badge-animated-granite">ОГРАНИЧЕННАЯ СЕРИЯ</span>
+          <div class="color-sample" style="background-image:url('assets/textures/granit-grey.jpg')"></div><h3>Grey</h3>
+          <p>Серый гранит (спокойный, практичный и стильный).</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  
+  <!-- ===== Сопутствующие товары ===== -->
+<section id="accessories" class="accessories reveal" aria-label="Сопутствующие товары">
+  <div class="container">
+    <div class="acc-head">
+      <h2 class="acc-title">Сопутствующие товары</h2>
+      <!-- при желании можно показывать плашку-раздела -->
+      <!-- <span class="acc-head-badge">Хит продаж</span> -->
+    </div>
+
+    <!-- сюда рендерятся карточки из accessories.json -->
+    <div id="accList" class="acc-grid" role="list"></div>
+  </div>
+</section>
+
+  <!-- ===== КАТАЛОГ (скрыт до выбора цвета) ===== -->
+  <section id="catalog" class="catalog section" hidden aria-hidden="true">
+    <div class="container">
+      <h2 id="catalogTitle" class="catalog__title" hidden>
+        Каталог: <span id="catalogTone">—</span>
+      </h2>
+
+      <div class="vlist" id="vlist" aria-label="Каталог по выбранному цвету">
+        <!-- Слайды придут из JS -->
+      </div>
+
+      <!-- Кнопка «вверх» появляется на последнем слайде -->
+      <button class="vlist-back" id="vlistBack" type="button" aria-label="К цветам">^</button>
+    </div>
+  </section>
+
+  <section id="cta" class="cta">
+    <div class="cta-wrap container">
+      <!-- Левая карточка -->
+      <article class="cta-card glass">
+        <h3>Остались вопросы?</h3>
+        <p>Оставьте заявку, и наш менеджер «МЕЧТА» свяжется с Вами и ответит на все вопросы.</p>
+        <a class="cta-btn" href="tel:+79933533767">Позвонить нам</a>
+      </article>
+
+      <!-- Телефон -->
+      <figure class="cta-phone">
+        <img src="assets/cta/phone.png" alt="Call..." loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <section id="market" class="market">
+    <footer class="footer">
+      <div class="footer-inner">
+        <p>© 2013–2025 «МЕЧТА»</p>
+         <p>Мы на интернет площадках</p>
+        <div class="footer-market">
+          <!-- Added loading="lazy" to partner logo images -->
+          <a class="mkt-badge ozon" href="https://www.ozon.ru/seller/mechta-265376/products/?miniapp=seller_265376" target="_blank" rel="noopener">
+            <img src="assets/market/ozon-logo.png" alt="Ozon" loading="lazy"> Ozon
+          </a>
+          <a class="mkt-badge wb" href="https://www.wildberries.ru/seller/645350" target="_blank" rel="noopener">
+            <img src="assets/market/wb-logo.png" alt="Wildberries" loading="lazy"> Wildberries
+          </a>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+[
+  {
+    "title": "Разделочная доска «Шахматная»",
+    "desc": "Двухсторонняя торцевая доска из массива. Не тупит нож и служит годами.",
+    "img": "assets/pots/soputka/board_chess.webp",
+    "wh": { "w": 800, "h": 1000 },
+    "ozon": "https://www.ozon.ru/t/your-product",
+    "wb": "https://www.wildberries.ru/catalog/140227941/detail.aspx?targetUrl=SN"
+  },
+  {
+    "title": "Силиконовая лопатка",
+    "desc": "Термостойкая до 230°C, бережно относится к антипригарному покрытию.",
+    "img": "assets/pots/soputka/spatula.webp",
+    "wh": { "w": 800, "h": 1000 },
+    "ozon": "https://www.ozon.ru/t/your-product",
+    "wb": "https://www.wildberries.ru/catalog/141530972/detail.aspx?targetUrl=SN"
+  },
+  {
+    "title": "Кулинарные щипцы",
+    "desc": "Не царапают посуду, жаропрочные. Удобная форма щипцов сделают процесс приготовления пищи легким и приятным.",
+    "img": "assets/pots/soputka/shipcy.webp",
+    "wh": { "w": 800, "h": 1000 },
+    "ozon": "https://www.ozon.ru/t/your-product",
+    "wb": "https://www.wildberries.ru/catalog/141529917/detail.aspx?targetUrl=SN"
+  },
+
+  {
+  "title": "Лопатка-скребок кулинарный",
+    "desc": "Сделана из высококачественного сырья. Легко держится в руках и не соскальзывает.",
+    "img": "assets/pots/soputka/screbok.webp",
+    "wh": { "w": 800, "h": 1000 },
+    "ozon": "https://www.ozon.ru/t/your-product",
+    "wb": "https://www.wildberries.ru/catalog/141531996/detail.aspx?targetUrl=SN"
+  },
+  {
+    "title": "Лопатка кулинарная с прорезями",
+    "desc": "Не прилипают остатки пищи. Легко моется и быстро сохнет. Есть отверстие для подвешивания.",
+    "img": "assets/pots/soputka/lopatka_prorezyami.webp",
+    "wh": { "w": 800, "h": 1000 },
+    "ozon": "https://www.ozon.ru/t/your-product",
+    "wb": "https://www.wildberries.ru/catalog/141528141/detail.aspx?targetUrl=SN"
+  },
+  {
+    "title": "Доска разделочная из бамбукового дерева",
+    "desc": "Идеальны для разделывания мяса и рыбы, овощей и фруктов. Не впитывают запахи и вкусы.",
+    "img": "assets/pots/soputka/doski_nabor.webp",
+    "wh": { "w": 800, "h": 1000 },
+    "ozon": "https://www.ozon.ru/t/your-product",
+    "wb": "https://www.wildberries.ru/catalog/138246787/detail.aspx?targetUrl=SN"
+  }
+]
