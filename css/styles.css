@@ -37,6 +37,7 @@ body {
   box-shadow: 0 1px 12px rgba(0,0,0,.10);
   padding-top: env(safe-area-inset-top); /* FIX: add safe-area padding for notch (iPhone) */
 }
+
 .header-inner {
   display: flex;
   align-items: center;
@@ -53,120 +54,91 @@ body {
 .header-phone { display: none !important; }  /* <- номер убираем из шапки */
 
 /* === Контрастное бургер-меню === */
-/* ====== BRAND COLORS ====== */
-:root{
-  --brand: #1FBF4C;             /* зелёный бренда */
-  --brand-ink: #0d5b27;         /* тёмный для текста/иконок */
-  --panel-bg: 255 255 255;      /* «стекло»: белая база */
-}
-
-/* ====== BURGER BUTTON (иконка) ====== */
-.burger{
-  --sz: 44px;
-  width: var(--sz);
-  height: var(--sz);
-  border-radius: 14px;
-  border: 2px solid color-mix(in srgb, var(--brand) 70%, transparent);
-  background: color-mix(in srgb, rgb(var(--panel-bg)) 60%, transparent);
-  box-shadow: 0 4px 18px color-mix(in srgb, var(--brand) 20%, transparent);
-  backdrop-filter: saturate(160%) blur(6px);
-  -webkit-backdrop-filter: saturate(160%) blur(6px);
-  display: inline-grid;
-  place-items: center;
+/* Кнопка-бургер */
+.burger {
+  display: block !important;
+  width: 48px;
+  height: 48px;
+  border: none;
+  background: rgba(0, 0, 0, 0.35); /* более тёмный фон */
+  border-radius: 12px;
+  position: relative;
   cursor: pointer;
-  transition: transform .15s ease, box-shadow .25s ease, border-color .25s ease;
-  will-change: transform;
+  z-index: 1600;
+  backdrop-filter: blur(6px) saturate(160%);
+  transition: background 0.25s;
 }
-
-.burger:hover{
-  transform: translateY(-1px);
-  box-shadow: 0 6px 22px color-mix(in srgb, var(--brand) 28%, transparent);
-  border-color: var(--brand);
+.burger:hover {
+  background: rgba(0, 0, 0, 0.5);
 }
-
-/* полоски */
-.burger span,
-.burger span::before,
-.burger span::after{
-  content: "";
-  display: block;
-  width: 22px; height: 2px;
-  background: var(--brand-ink);
+.burger span {
+  position: absolute;
+  left: 10px;
+  width: 28px;
+  height: 2.5px;
+  background: #fff;
   border-radius: 2px;
-  transition: transform .2s ease, opacity .2s ease, background .2s ease;
+  transition: 0.25s ease;
 }
-.burger span::before{ transform: translateY(-6px); }
-.burger span::after{  transform: translateY( 6px); }
-
-/* состояние «крестика» */
-.burger.active span{ background: transparent; }
-.burger.active span::before{ transform: rotate(45deg); }
-.burger.active span::after { transform: rotate(-45deg); }
-
-/* ====== MOBILE PANEL ====== */
-.nav-mobile{
-  position: fixed;
-  top: clamp(68px, 8svh, 86px);
-  right: 16px;
-  z-index: 1000;
-  width: min(86vw, 360px);
-  padding: 14px;
-  border-radius: 20px;
-  border: 1px solid color-mix(in srgb, var(--brand) 35%, transparent);
-  background: color-mix(in srgb, rgb(var(--panel-bg)) 78%, transparent);
-  box-shadow:
-    0 18px 40px rgba(0,0,0,.14),
-    0 0 0 1px color-mix(in srgb, var(--brand) 12%, transparent) inset;
-  backdrop-filter: blur(10px) saturate(160%);
-  -webkit-backdrop-filter: blur(10px) saturate(160%);
-  transform: translateY(-8px) scale(.98);
+.burger span:nth-child(1) { top: 14px; }
+.burger span:nth-child(2) { top: 22px; }
+.burger span:nth-child(3) { top: 30px; }
+.burger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.burger.active span:nth-child(2) {
   opacity: 0;
-  pointer-events: none;
-  transition: transform .22s ease, opacity .22s ease;
-  will-change: transform, opacity;
+}
+.burger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
-/* открыто */
-.nav-mobile.open{
-  transform: translateY(0) scale(1);
-  opacity: 1;
-  pointer-events: auto;
+/* Панель меню */
+.nav-mobile {
+  position: fixed;
+  top: 70px;
+  right: 16px;
+  z-index: 1500;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 20px;
+  background: rgba(25, 25, 25, 0.95); /* тёмное стекло */
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px) saturate(150%);
+  animation: menuIn 0.25s ease;
 }
 
-/* список пунктов */
-.nav-mobile a{
-  display: block;
-  padding: 14px 16px;
-  margin: 8px 6px;
-  border-radius: 14px;
-  font-weight: 600;
-  letter-spacing: .2px;
-  color: var(--brand-ink);
-  background: rgba(255,255,255,.85);
-  border: 1px solid color-mix(in srgb, var(--brand) 26%, transparent);
+/* Чтобы меню было видно при открытии */
+.nav-mobile.open {
+  display: flex !important;
+}
+
+/* Элементы меню */
+.nav-mobile a {
+  font-size: 16px;
+  color: #ffffff;
   text-decoration: none;
-  transition: background .18s ease, color .18s ease, transform .12s ease, box-shadow .18s ease;
+  padding: 10px 12px;
+  border-radius: 10px;
+  transition: 0.2s;
+  background: rgba(255, 255, 255, 0.06);
 }
-.nav-mobile a:hover{
-  background: var(--brand);
-  color: #fff;
-  transform: translateY(-1px);
-  box-shadow: 0 8px 18px color-mix(in srgb, var(--brand) 28%, transparent);
-}
-.nav-mobile a:active{ transform: translateY(0); }
-
-/* последний пункт с телефоном — делаем «пилюлей» */
-.nav-mobile a[href^="tel:"],
-.nav-mobile .phone{
-  text-align: center;
-  background: color-mix(in srgb, var(--brand) 12%, white);
-  border-color: var(--brand);
+.nav-mobile a:hover {
+  background: rgba(255, 255, 255, 0.12);
 }
 
-/* режим «уменьшить анимацию» */
-@media (prefers-reduced-motion: reduce){
-  .burger, .nav-mobile{ transition: none; }
-  .nav-mobile a{ transition: none; }
+/* Анимация */
+@keyframes menuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* Отступ под фиксированную шапку, чтобы контент не «залезал» под неё */
