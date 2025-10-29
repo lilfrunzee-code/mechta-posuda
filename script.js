@@ -188,20 +188,6 @@ document.querySelectorAll('.card').forEach(card => {
   });
 });
 
-// Рябь по заголовку CTA (необязательно, декоративный эффект)
-const press = document.getElementById('cta-questions');
-if (press) {
-  press.addEventListener('click', (e) => {
-    const r = document.createElement('span');
-    r.className = 'r';
-    const rect = press.getBoundingClientRect();
-    r.style.left = (e.clientX - rect.left) + 'px';
-    r.style.top  = (e.clientY - rect.top)  + 'px';
-    press.appendChild(r);
-    setTimeout(() => r.remove(), 600);
-  });
-}
-
 // ===== Плавный скролл к элементу (для кнопки "вверх") =====
 function smoothScrollTo(el) {
   el.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -268,7 +254,7 @@ async function initCatalog() {
       alt="${it.title || ''}"
       width="${it.w || 1600}"
       height="${it.h || 1200}"
-      loading="lazy"
+      loading="${i < 3 ? 'eager' : 'lazy'}"
       decoding="async"
       fetchpriority="low"
       sizes="(max-width: 768px) 90vw, 720px"
@@ -389,54 +375,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   
-});
-// === Отложенное раскрытие секций "О компании" и "Технология качества" ===
-document.addEventListener('DOMContentLoaded', () => {
-  const about   = document.getElementById('about');
-  const quality = document.getElementById('quality');
-  if (!about || !quality) return;
-
-  // Если JS есть — убираем no-js (в CSS для фолбэка)
-  document.documentElement.classList.remove('no-js');
-
-  function revealAboutSections(scrollToAbout = true) {
-    [about, quality].forEach(sec => {
-      sec.hidden = false;                         // ВАЖНО: снимаем hidden
-      sec.classList.add('is-shown');              // запускаем анимацию
-      sec.setAttribute('aria-hidden', 'false');
-    });
-    if (scrollToAbout) {
-      setTimeout(() => {
-        about.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 30);
-    }
-  }
-
-  // Кнопка в hero
-  const btnMore = document.getElementById('btnMoreAbout');
-  if (btnMore) {
-    btnMore.addEventListener('click', (e) => {
-      e.preventDefault();
-      revealAboutSections(true);
-      history.pushState(null, '', '#about');
-    });
-  }
-
-  // Пункт бургер-меню
-  document.querySelectorAll('[data-reveal="about"]').forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();                         // перехватываем даже если href="#about"
-      revealAboutSections(true);
-      history.pushState(null, '', '#about');
-      // если у тебя есть функция закрытия меню — вызови её:
-      if (typeof closeMenu === 'function') closeMenu();
-    });
-  });
-
-  // Если пришли сразу с #about — раскрываем автоматически
-  if (location.hash === '#about') {
-    revealAboutSections(false);
-  }
 });
 /* ===== Сопутствующие товары: данные + рендер ===== */
 async function loadAccessoriesData() {
