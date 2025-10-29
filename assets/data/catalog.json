@@ -1,100 +1,100 @@
 {
   "blue": [
   {
-    "img": "assets/pots/blue/kastrulya_blue.png",
+    "img": "assets/pots/blue/kastrulya_blue.webp",
     "title": "Кастрюля BLUE",
     "desc": "Многослойное антипригарное покрытие без PFOA. Равномерно прогревается и сохраняет вкус блюд.",
     "ozon": "https://ozon.ru/t/ZJtDyOy"
   },
 
   {
-    "img": "assets/pots/blue/blinnica_blue.png",
+    "img": "assets/pots/blue/blinnica_blue.webp",
     "title": "Сковорода блинная BLUE",
     "desc": "Идеальна для тонких блинов и оладий. Литое дно и лёгкий корпус обеспечивают удобство в работе."
   },
 
   {
-    "img": "assets/pots/blue/kovsh_blue.png",
+    "img": "assets/pots/blue/kovsh_blue.webp",
     "title": "Ковш BLUE",
     "desc": "Удобен для соусов, каш и подогрева блюд. Прочное антипригарное покрытие и эргономичная ручка."
   },
 
   {
-    "img": "assets/pots/blue/skovoroda_grill_blue.png",
+    "img": "assets/pots/blue/skovoroda_grill_blue.webp",
     "title": "Сковорода-гриль BLUE",
     "desc": "Создаёт идеальные румяные полоски и аромат жареного мяса. Подходит для всех типов плит, кроме индукции."
   },
 
   {
-    "img": "assets/pots/blue/skovoroda_wok_blue.png",
+    "img": "assets/pots/blue/skovoroda_wok_blue.webp",
     "title": "Сковорода WOK BLUE",
     "desc": "Высокие борта и быстрое распределение тепла — для обжарки овощей и блюд в азиатском стиле."
   },
 
   {
-    "img": "assets/pots/blue/protiven_blue.png",
+    "img": "assets/pots/blue/protiven_blue.webp",
     "title": "Противень BLUE",
     "desc": "Толстостенный алюминий удерживает тепло и обеспечивает равномерную выпечку без пригорания."
   },
 
   {
-    "img": "assets/pots/blue/skovoroda_blue.png",
+    "img": "assets/pots/blue/skovoroda_blue.webp",
     "title": "Сковорода BLUE",
     "desc": "Классическая универсальная сковорода на каждый день. Оптимальная глубина и надёжное антипригарное покрытие."
   },
 
   {
-    "img": "assets/pots/blue/kazan_blue.png",
+    "img": "assets/pots/blue/kazan_blue.webp",
     "title": "Казан BLUE",
     "desc": "Идеален для плова, тушёных блюд и жарки. Толстое литое дно сохраняет тепло, а антипригарное покрытие облегчает уход."
   },
 
   {
-    "img": "assets/pots/blue/jarovnya_kvadrat_blue.png",
+    "img": "assets/pots/blue/jarovnya_kvadrat_blue.webp",
     "title": "Жаровня квадратная BLUE",
     "desc": "Универсальная жаровня для запекания мяса и овощей. Устойчива к высоким температурам и равномерно распределяет тепло."
   }
 ],
   "violet": [
   {
-    "img": "assets/pots/violet/kastrulya_violet.png",
+    "img": "assets/pots/violet/kastrulya_violet.webp",
     "title": "Кастрюля VIOLET",
     "desc": "Элегантный фиолетовый оттенок и прочное антипригарное покрытие делают эту кастрюлю украшением кухни."
   },
   {
-    "img": "assets/pots/violet/skovoroda_violet.png",
+    "img": "assets/pots/violet/skovoroda_violet.webp",
     "title": "Сковорода VIOLET",
     "desc": "Готовь с удовольствием! Устойчива к царапинам и обеспечивает мягкое жарение без пригорания."
   },
   {
-    "img": "assets/pots/violet/skovoroda_grill_violet.png",
+    "img": "assets/pots/violet/skovoroda_grill_violet.webp",
     "title": "Сковорода-гриль VIOLET",
     "desc": "Добавь ресторанный акцент дома — румяные полоски и хрустящая корочка без лишнего масла."
   },
   {
-    "img": "assets/pots/violet/blinnica_violet.png",
+    "img": "assets/pots/violet/blinnica_violet.webp",
     "title": "Блинница VIOLET",
     "desc": "Тонкое тесто, равномерный нагрев и идеальный румянец — блин за блином без пригорания."
   },
   {
-    "img": "assets/pots/violet/kovsh_violet.png",
+    "img": "assets/pots/violet/kovsh_violet.webp",
     "title": "Ковш VIOLET",
     "desc": "Компактный помощник для подогрева и соусов. Эргономичная ручка и лёгкий уход."
   },
   {
-    "img": "assets/pots/violet/kazan_violet.png",
+    "img": "assets/pots/violet/kazan_violet.webp",
     "title": "Казан VIOLET",
     "desc": "Массивное литое дно и стильный дизайн. Подходит для тушения и приготовления плова."
   },
 
    {
-    "img": "assets/pots/violet/jarovnya_kvadrat_violet.png",
+    "img": "assets/pots/violet/jarovnya_kvadrat_violet.webp",
     "title": "Жаровня квадратная VIOLET",
     "desc": "Универсальная жаровня с фиолетовым оттенком для запекания мяса и овощей. Устойчива к высоким температурам и равномерно распределяет тепло."
   },
 
   {
-    "img": "assets/pots/violet/skovoroda_wok_violet.png",
+    "img": "assets/pots/violet/skovoroda_wok_violet.webp",
     "title": "Сковорода WOK VIOLET",
     "desc": "Высокие борта и быстрое распределение тепла — для обжарки овощей и блюд в азиатском стиле."
   }
